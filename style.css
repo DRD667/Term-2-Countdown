@@ -1,0 +1,8 @@
+body {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  margin: 2rem 2rem 0;
+  overflow: hidden;
+  display: grid;
+}
