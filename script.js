@@ -22,14 +22,16 @@ let dates = [
 // let diff = Math.abs(timeMaths - time);
 // let daysLeft = diff / milInDay;
 
+let dateCell = document.querySelectorAll('.date');
 for (let index = 0; index < dateCell.length; index++) {
   const element = dateCell[index];
   const element2 = dates[index];
-  let timeMaths = dateEnglish.getTime();
+
+  let timeSubject = element2.getTime();
   const milInDay = 1000 * 60 * 60 * 24;
-  let diff = Math.abs(timeMaths - time);
+  let diff = Math.abs(timeSubject - time);
   let daysLeft = diff / milInDay;
-  let dateCell = document.querySelectorAll('.date');
+
   element.innerHTML = `${Math.floor(daysLeft)} days`;
 }
 // dateCell.style.display="none";
