@@ -4,5 +4,9 @@ body {
   height: 100vh;
   margin: 2rem 0.5rem 0;
   overflow: hidden;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: poppins;
+  text-align: center;
 }
