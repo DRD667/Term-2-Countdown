@@ -29,10 +29,16 @@ for (let index = 0; index < dateCell.length; index++) {
 
   let timeSubject = element2.getTime();
   const milInDay = 1000 * 60 * 60 * 24;
-  let diff = Math.abs(timeSubject - time);
-  let daysLeft = diff / milInDay + 1;
-
-  element.innerHTML = `${Math.floor(daysLeft)} days`;
+  let diff = Math.floor(timeSubject - time);
+  let daysLeft = Math.floor(diff / milInDay + 1);
+  console.log(daysLeft);
+  if (daysLeft > 1) {
+    element.innerHTML = `${Math.floor(daysLeft)} days`;
+  } else if (daysLeft === 1) {
+    element.innerHTML = `${Math.floor(daysLeft)} day`;
+  } else {
+    element.innerHTML = `:)`;
+  }
 }
 // dateCell.style.display="none";
 // document.getElementById('demo').innerHTML = Math.floor(daysLeft);
