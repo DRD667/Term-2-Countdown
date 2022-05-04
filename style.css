@@ -12,3 +12,7 @@ body {
   flex-direction: column;
   gap: 1rem;
 }
+
+.active {
+  background-color: rgba(182, 73, 36, 0.477);
+}
