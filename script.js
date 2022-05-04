@@ -37,7 +37,7 @@ for (let index = 0; index < dateCell.length; index++) {
   } else if (daysLeft === 1) {
     element.innerHTML = `${Math.floor(daysLeft)} day`;
   } else {
-    element.innerHTML = `:)`;
+    element.innerHTML = `Over`;
   }
 }
 // dateCell.style.display="none";
