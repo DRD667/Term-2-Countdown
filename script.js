@@ -1,6 +1,5 @@
 // document.body.style.display = "none"
-const d = new Date();
-let time = d.getTime();
+
 let dateEnglish = new Date('2022/04/27');
 let dateMaths = new Date('2022/05/05');
 let dateSanskrit = new Date('2022/05/07');
@@ -23,22 +22,29 @@ let dates = [
 // let daysLeft = diff / milInDay;
 
 let dateCell = document.querySelectorAll('.date');
-for (let index = 0; index < dateCell.length; index++) {
-  const element = dateCell[index];
-  const element2 = dates[index];
 
-  let timeSubject = element2.getTime();
-  const milInDay = 1000 * 60 * 60 * 24;
-  let diff = Math.floor(timeSubject - time);
-  let daysLeft = Math.floor(diff / milInDay + 1);
-  console.log(daysLeft);
-  if (daysLeft > 1) {
-    element.innerHTML = `${Math.floor(daysLeft)} days`;
-  } else if (daysLeft === 1) {
-    element.innerHTML = `${Math.floor(daysLeft)} day`;
-  } else {
-    element.innerHTML = `Over`;
+function comp() {
+  const d = new Date();
+  let time = d.getTime();
+  for (let index = 0; index < dateCell.length; index++) {
+    const element = dateCell[index];
+    const element2 = dates[index];
+
+    let timeSubject = element2.getTime();
+    const milInDay = 1000 * 60 * 60 * 24;
+    let diff = Math.floor(timeSubject - time);
+    let daysLeft = Math.floor(diff / milInDay + 1);
+    console.log(daysLeft);
+    if (daysLeft > 1) {
+      element.innerHTML = `${Math.floor(daysLeft)} days`;
+    } else if (daysLeft === 1) {
+      element.innerHTML = `${Math.floor(daysLeft)} day`;
+    } else {
+      element.innerHTML = `Over`;
+    }
   }
 }
+comp();
+setInterval(comp, 5000);
 // dateCell.style.display="none";
 // document.getElementById('demo').innerHTML = Math.floor(daysLeft);
